@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScriptevents</title>
+    <style>
+        .container{
+            width: 500px;
+            height: 500px;
+            background-color: pink;
+            text-align: center;
+            margin: 0 auto;
+            margin-top: 150px; 
+            padding: 15px;
+        }
+        button{
+            height: 50px;
+            width: 180px;
+            font-size: 20px;
+
+            
+        }
+        input{
+            width: 270px;
+            height: 40px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body onload="pageLoad()">
+    <div class="container" onmouseover="fun1()" onmouseleave="fun2()">
+        <h1>This is my JavaScript Events</h1>
+        <button id="button">Click Me</button><br>
+        <input type="text" id="input" onfocus="fun3()" onkeydown="fun4()">
+    </div>
+    <script>
+        // function pageLoad(){
+        //     setTimeout(myPage,4);
+        // }
+        function myPage(){
+            window.open("http://beta-labs.in")
+        }
+
+        var btn =  document.getElementById("button");
+        btn.onclick = function(){
+            var y = document.getElementsByTagName('h1');
+            y[0].innerHTML = "Beta-Labs"
+        }
+
+        //mousehover
+        function fun1(){
+            var z = document.getElementsByClassName("container");
+            z[0].style.backgroundColor = "violet"
+        }
+        function fun2(){
+            var z = document.getElementsByClassName("container");
+            z[0].style.backgroundColor = "lightgreen"  
+        }
+        function fun3(){
+            document.getElementById("input").style.outline = "none";
+            document.getElementById('input').style.border="5px solid  yellow";
+        }
+        function fun4(){
+            document.getElementById("input").style.outline = "none";
+            document.getElementById('input').style.border="5px solid  skyblue";
+            document.getElementById("input").style.color = "red";
+        }
+    </script>
+</body>
+</html>
